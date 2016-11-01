@@ -131,7 +131,7 @@ static int RSA_I2OSP(MPI x, size_t xLen, u8 **_X)
 	 * bits not being reported by MPI.
 	 */
 	x_size = mpi_get_nbits(x);
-	pr_devel("size(x)=%u xLen*8=%zu\n", x_size, xLen * 8);
+	// pr_devel("size(x)=%u xLen*8=%zu\n", x_size, xLen * 8);
 	if (x_size != xLen * 8 - 15)
 		return -ERANGE;
 

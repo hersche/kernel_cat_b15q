@@ -554,7 +554,7 @@ static ssize_t mt3326_store_status(struct device *dev, struct device_attribute *
 	res = mt3326_gps_set_status(obj, buf, count);
 	if (!res)
 		return count;
-	GPS_DBG("invalid content: '%p', length = %zu\n", buf, count);
+        //GPS_DBG("invalid content: '%p', length = %zu\n", buf, count);
 	return count;
 }
 
@@ -599,7 +599,7 @@ static ssize_t mt3326_store_state(struct device *dev, struct device_attribute *a
 		if (!mt3326_gps_set_state(obj, state))
 			return count;
 	}
-	GPS_DBG("invalid content: '%p', length = %zu\n", buf, count);
+	//GPS_DBG("invalid content: '%p', length = %zu\n", buf, count);
 	return count;
 }
 
@@ -644,7 +644,7 @@ static ssize_t mt3326_store_pwrsave(struct device *dev, struct device_attribute 
 		if (!mt3326_gps_set_pwrsave(obj, pwrsave))
 			return count;
 	}
-	GPS_DBG("invalid content: '%p', length = %zu\n", buf, count);
+	//GPS_DBG("invalid content: '%p', length = %zu\n", buf, count);
 	return count;
 }
 
@@ -679,12 +679,12 @@ static ssize_t mt3326_store_rdelay(struct device *dev, struct device_attribute *
 	unsigned long val;
 
 	if (!dev) {
-		GPS_DBG("dev is null!!\n");
+		//GPS_DBG("dev is null!!\n");
 		return 0;
 	}
 	obj = (struct gps_drv_obj *)dev_get_drvdata(dev);
 	if (!obj) {
-		GPS_DBG("drv data is null!!\n");
+		//GPS_DBG("drv data is null!!\n");
 		return 0;
 	}
 	rdelay = (int)kstrtol(buf, 10, &val);
@@ -694,7 +694,7 @@ static ssize_t mt3326_store_rdelay(struct device *dev, struct device_attribute *
 		mutex_unlock(&obj->sem);
 		return count;
 	}
-	GPS_DBG("invalid content: '%p', length = %zu\n", buf, count);
+	//GPS_DBG("invalid content: '%p', length = %zu\n", buf, count);
 	return count;
 }
 

@@ -660,7 +660,8 @@ ifdef CONFIG_CC_STACKPROTECTOR_REGULAR
   endif
 else
 ifdef CONFIG_CC_STACKPROTECTOR_STRONG
-  stackp-flag := -fstack-protector-strong
+  # hersche oldval -fstack-protector-strong
+  stackp-flag := 
   ifeq ($(call cc-option, $(stackp-flag)),)
     $(warning Cannot use CONFIG_CC_STACKPROTECTOR_STRONG: \
 	      -fstack-protector-strong not supported by compiler)

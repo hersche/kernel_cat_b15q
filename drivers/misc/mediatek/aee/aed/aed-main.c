@@ -250,7 +250,7 @@ static ssize_t msg_copy_to_user(const char *prefix, const char *msg, char __user
 	}
 	/* TODO: semaphore */
 	if ((*f_pos + count) > len) {
-		LOGE("read size overflow, count=%zx, *f_pos=%llx\n", count, *f_pos);
+		// LOGE("read size overflow, count=%zx, *f_pos=%llx\n", count, *f_pos);
 		count = len - *f_pos;
 		ret = -EFAULT;
 		goto out;
@@ -991,7 +991,7 @@ static ssize_t aed_ee_write(struct file *filp, const char __user *buf, size_t co
 
 	/* the request must be an *struct AE_Msg buffer */
 	if (count != sizeof(struct AE_Msg)) {
-		LOGD("%s: ERR, aed_write count=%zx\n", __func__, count);
+		//LOGD("%s: ERR, aed_write count=%zx\n", __func__, count);
 		return -1;
 	}
 
@@ -1196,7 +1196,7 @@ static ssize_t aed_ke_write(struct file *filp, const char __user *buf, size_t co
 
 	/* the request must be an * AE_Msg buffer */
 	if (count != sizeof(struct AE_Msg)) {
-		LOGD("ERR: aed_write count=%zx\n", count);
+		//LOGD("ERR: aed_write count=%zx\n", count);
 		return -1;
 	}
 

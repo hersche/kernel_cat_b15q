@@ -42,13 +42,13 @@ static struct cdev gWmtDetectCdev;
 unsigned int gWmtDetectDbgLvl = WMT_DETECT_LOG_INFO;
 
 
-#ifdef MTK_WCN_COMBO_CHIP_SUPPORT
+//#ifdef MTK_WCN_COMBO_CHIP_SUPPORT
 inline unsigned int wmt_plat_get_soc_chipid(void)
 {
 	WMT_DETECT_INFO_FUNC("no soc chip supported, due to MTK_WCN_SOC_CHIP_SUPPORT is not set.\n");
 	return -1;
 }
-#endif
+//#endif
 
 static int wmt_detect_open(struct inode *inode, struct file *file)
 {

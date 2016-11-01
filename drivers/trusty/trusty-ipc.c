@@ -1244,8 +1244,8 @@ static void _handle_conn_rsp(struct tipc_virtio_dev *vds,
 	struct tipc_chan *chan;
 
 	if (sizeof(*rsp) != len) {
-		dev_err(&vds->vdev->dev, "%s: Invalid response length %zd\n",
-			__func__, len);
+		//dev_err(&vds->vdev->dev, "%s: Invalid response length %zd\n",
+		//	__func__, len);
 		return;
 	}
 
@@ -1284,8 +1284,8 @@ static void _handle_disc_req(struct tipc_virtio_dev *vds,
 	struct tipc_chan *chan;
 
 	if (sizeof(*req) != len) {
-		dev_err(&vds->vdev->dev, "%s: Invalid request length %zd\n",
-			__func__, len);
+		//dev_err(&vds->vdev->dev, "%s: Invalid request length %zd\n",
+		//	__func__, len);
 		return;
 	}
 
@@ -1357,12 +1357,12 @@ static int _handle_rxbuf(struct tipc_virtio_dev *vds,
 
 	/* message sanity check */
 	if (rxlen > rxbuf->buf_sz) {
-		dev_warn(dev, "inbound msg is too big: %zd\n", rxlen);
+		//dev_warn(dev, "inbound msg is too big: %zd\n", rxlen);
 		goto drop_it;
 	}
 
 	if (rxlen < sizeof(*msg)) {
-		dev_warn(dev, "inbound msg is too short: %zd\n", rxlen);
+		//dev_warn(dev, "inbound msg is too short: %zd\n", rxlen);
 		goto drop_it;
 	}
 

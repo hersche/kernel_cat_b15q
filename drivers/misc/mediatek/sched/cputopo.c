@@ -1,3 +1,7 @@
+void arch_get_cluster_cpus(struct cpumask *, int i);
+bool arch_is_smp(void);
+bool arch_is_multi_cluster(void);
+unsigned int arch_get_nr_clusters(void);
 #include <linux/device.h>
 #include <linux/proc_fs.h>
 #include <linux/topology.h>
@@ -6,6 +10,7 @@
 #define MAX_LONG_SIZE 24
 
 struct kobject *cputopo_glb_kobj;
+
 
 /* tasks all */
 static int tasks_all_show(struct seq_file *m, void *v)

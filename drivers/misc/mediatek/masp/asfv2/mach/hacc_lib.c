@@ -146,5 +146,5 @@ _error:
 	osal_hacc_unlock();
 
 	pr_err("[%s] masp_hal_secure_algo error (0x%x)\n", MOD, err);
-	BUG_ON(!(0));
+	//BUG_ON(!(0));
 }

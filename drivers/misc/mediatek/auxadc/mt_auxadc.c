@@ -428,35 +428,35 @@ void mt_auxadc_hal_init(struct platform_device *dev)
 	/* AUXADC_DRV_SetBits16((volatile u16 *)AUXADC_CON_RTP, 1);             //disable RTP */
 }
 
-static void mt_auxadc_hal_suspend(void)
-{
-	pr_debug("******** MT auxadc driver suspend!! ********\n");
-#if !defined(CONFIG_MTK_CLKMGR)
-	if (clk_auxadc)
-		clk_disable_unprepare(clk_auxadc);
-#else
-#ifndef CONFIG_MTK_FPGA
-	if (disable_clock(MT_PDN_PERI_AUXADC, "AUXADC"))
-		pr_err("hwEnableClock AUXADC failed.");
-#endif
-#endif
-}
+//static void mt_auxadc_hal_suspend(void)
+//{
+//	pr_debug("******** MT auxadc driver suspend!! ********\n");
+//#if !defined(CONFIG_MTK_CLKMGR)
+//	if (clk_auxadc)
+//		clk_disable_unprepare(clk_auxadc);
+//#else
+//#ifndef CONFIG_MTK_FPGA
+//	if (disable_clock(MT_PDN_PERI_AUXADC, "AUXADC"))
+//		pr_err("hwEnableClock AUXADC failed.");
+//#endif
+//#endif
+//}
 
-static void mt_auxadc_hal_resume(void)
-{
-	pr_debug("******** MT auxadc driver resume!! ********\n");
-#if !defined(CONFIG_MTK_CLKMGR)
-	if (clk_auxadc)
-		clk_prepare_enable(clk_auxadc);
-#else
-#ifndef CONFIG_MTK_FPGA
-	if (enable_clock(MT_PDN_PERI_AUXADC, "AUXADC"))
-		pr_err("hwEnableClock AUXADC failed!!!.");
-#endif
-#endif
+//static void mt_auxadc_hal_resume(void)
+//{
+//	pr_debug("******** MT auxadc driver resume!! ********\n");
+//#if !defined(CONFIG_MTK_CLKMGR)
+//	if (clk_auxadc)
+//		clk_prepare_enable(clk_auxadc);
+//#else
+//#ifndef CONFIG_MTK_FPGA
+//	if (enable_clock(MT_PDN_PERI_AUXADC, "AUXADC"))
+//		pr_err("hwEnableClock AUXADC failed!!!.");
+//#endif
+//#endif
 
 	/* AUXADC_DRV_SetBits16((volatile u16 *)AUXADC_CON_RTP, 1);             //disable RTP */
-}
+//}
 
 static int mt_auxadc_dump_register(char *buf)
 {
@@ -1709,19 +1709,19 @@ static void mt_auxadc_shutdown(struct platform_device *dev)
 	pr_debug("******** MT auxadc driver shutdown!! ********\n");
 }
 
-static int mt_auxadc_suspend(struct platform_device *dev, pm_message_t state)
-{
+//static int mt_auxadc_suspend(struct platform_device *dev, pm_message_t state)
+//{
 	/* pr_debug("******** MT auxadc driver suspend!! ********\n" ); */
-	mt_auxadc_hal_suspend();
-	return 0;
-}
+//	mt_auxadc_hal_suspend();
+//	return 0;
+//}
 
-static int mt_auxadc_resume(struct platform_device *dev)
-{
+//static int mt_auxadc_resume(struct platform_device *dev)
+//{
 	/* pr_debug("******** MT auxadc driver resume!! ********\n" ); */
-	mt_auxadc_hal_resume();
-	return 0;
-}
+//	mt_auxadc_hal_resume();
+//	return 0;
+//}
 
 #ifdef CONFIG_OF
 static const struct of_device_id mt_auxadc_of_match[] = {

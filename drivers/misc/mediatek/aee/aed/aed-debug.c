@@ -138,7 +138,7 @@ static ssize_t proc_generate_wdt_write(struct file *file,
 	unsigned char name[20] = { 0 };
 
 	if ((size < 2) || (size > sizeof(msg))) {
-		LOGW("\n size = %zx\n", size);
+		// LOGW("\n size = %zx\n", size);
 		return -EINVAL;
 	}
 	if (copy_from_user(msg, buf, size)) {
@@ -341,7 +341,7 @@ static ssize_t proc_generate_oops_write(struct file *file,
 	int test_case, test_subcase, test_cpu;
 
 	if ((size < 2) || (size > sizeof(msg))) {
-		LOGW("%s: count = %zx\n", __func__, size);
+		//LOGW("%s: count = %zx\n", __func__, size);
 		return -EINVAL;
 	}
 	if (copy_from_user(msg, buf, size)) {
@@ -415,11 +415,11 @@ static ssize_t proc_generate_nested_ke_write(struct file *file,
 	int test_case, test_subcase, test_cpu;
 
 	if ((size < 2) || (size > sizeof(msg))) {
-		LOGW("%s: count = %zx\n", __func__, size);
+		//LOGW("%s: count = %zx\n", __func__, size);
 		return -EINVAL;
 	}
 	if (copy_from_user(msg, buf, size)) {
-		LOGW("%s: error\n", __func__);
+		//LOGW("%s: error\n", __func__);
 		return -EFAULT;
 	}
 	test_case = (unsigned int)msg[0] - '0';

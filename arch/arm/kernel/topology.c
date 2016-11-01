@@ -91,7 +91,7 @@ static void __init parse_dt_topology(void)
 	__cpu_capacity = kcalloc(nr_cpu_ids, sizeof(*__cpu_capacity),
 				 GFP_NOWAIT);
 
-	min_cpu_perf = ULONG_MAX;
+	int min_cpu_perf = ULONG_MAX;
 	max_cpu_perf = 0;
 
 	for_each_possible_cpu(cpu) {

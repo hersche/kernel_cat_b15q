@@ -56,7 +56,7 @@ static struct fsnotify_event *get_one_event(struct fsnotify_group *group,
 {
 	BUG_ON(!mutex_is_locked(&group->notification_mutex));
 
-	pr_debug("%s: group=%p count=%zd\n", __func__, group, count);
+//	pr_debug("%s: group=%p count=%zd\n", __func__, group, count);
 
 	if (fsnotify_notify_queue_is_empty(group))
 		return NULL;
@@ -337,7 +337,7 @@ static ssize_t fanotify_write(struct file *file, const char __user *buf, size_t 
 	if (count > sizeof(response))
 		count = sizeof(response);
 
-	pr_debug("%s: group=%p count=%zu\n", __func__, group, count);
+//	pr_debug("%s: group=%p count=%zu\n", __func__, group, count);
 
 	if (copy_from_user(&response, buf, count))
 		return -EFAULT;
