@@ -1,4 +1,30 @@
-        Linux kernel release 3.x <http://kernel.org/>
+Kernel for B15Q
+------------------------
+
+This kernel is ported from 
+
+https://android.googlesource.com/kernel/mediatek/
+
+forked for the cat b15q. It is highly experimental and mainly compileable with my first commit (NOT bootable!).
+
+Mainversion for developing is this 3.18-branch. 
+
+The (def)config-file needed is under arch/arm/configs/mt6582_defconfig.
+
+More information is under
+
+https://github.com/hersche/android/wiki/Development
+
+and
+
+https://github.com/hersche/android/wiki/Kernel-build
+
+Development is welcome!
+
+Usual Linux-text
+-------------------------------
+  
+  Linux kernel release 3.x <http://kernel.org/>
 
 These are the release notes for Linux version 3.  Read them carefully,
 as they tell you what this is all about, explain how to install the
